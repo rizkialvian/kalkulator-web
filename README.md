@@ -1,2 +1,2 @@
 # kalkulator-web
-Kalkulator sederhana
+Kalkulator sederhana https://rizkialvian.github.io/kalkulator-web/
