@@ -1,0 +1,94 @@
+/*Membuat seluruh elemen menerapkan nilai border-box*/
+* {
+    box-sizing: border-box;
+}
+
+/*Menetapkan font-family pada elemen body*/
+body {
+    font-family: sans-serif;
+}
+
+/*Menerapkan flexbox pada class flex-container-column*/
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+  
+    /* properti pendukung */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+/*Menerapkan flexbox pada class flex-container-row*/
+.flex-container-row {
+    display: flex;
+}
+
+/*Menetapkan styling pada tombol kalkulator*/
+.button {
+    flex-basis: 25%;
+   
+    /* properti pendukung */
+    font-size: 1.5em;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid black;
+    background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
+    cursor: pointer;
+}
+/*Membuat tombol equal 2 kali lebih panjang*/  
+.double {
+    flex-basis: 50%;
+}
+/*Menetapkan styling pada class display*/
+.display {
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333333;
+    border: 1px solid black;
+    font-size: 2em;
+}
+/*Menetapkan warna background pada operator button*/
+.operator, .negative, .equals {
+  background: orange;
+}
+
+/*Membuat efek card pada calculator*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+
+/*Mengatur Tampilan history*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+th {
+    background-color: orange;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #d2d2d2;
+}
+
+h2 {
+    text-align: center;
+}
+
+/*Membuat tampilan responsif*/
+@media screen and (max-width: 513px) {
+    .button {
+        padding: 10px;
+    }
+}
