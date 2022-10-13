@@ -6,16 +6,40 @@
 /*Menetapkan font-family pada elemen body*/
 body {
     font-family: sans-serif;
+    text-align: center;
+}
+
+/*Mengatur judul berada ditengah*/
+h1 {
+    text-align: center;
+}
+
+/*Membuat efek kartu pada calculator*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/*Menetapkan styling pada class display*/
+.display {
+    color: white;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #333333;
+    border: 1px solid black;
+    font-size: 2em;
 }
 
 /*Menerapkan flexbox pada class flex-container-column*/
 .flex-container-column {
     display: flex;
     flex-direction: column;
-  
+
     /* properti pendukung */
-    max-width: 800px;
-    margin: 0 auto;
     text-align: right;
 }
 
@@ -26,68 +50,60 @@ body {
 
 /*Menetapkan styling pada tombol kalkulator*/
 .button {
-    flex-basis: 25%;
-   
+    flex-basis: 20%;
+
     /* properti pendukung */
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
-    padding: 40px;
+    padding: 15px;
     border: 1px solid black;
     background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
     cursor: pointer;
 }
-/*Membuat tombol equal 2 kali lebih panjang*/  
+
+/*Membuat tombol hapus dan hasil 2 kali lebih panjang*/  
 .double {
     flex-basis: 50%;
 }
-/*Menetapkan styling pada class display*/
-.display {
-    color: white;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #333333;
-    border: 1px solid black;
-    font-size: 2em;
-}
-/*Menetapkan warna background pada operator button*/
-.operator, .negative, .equals {
-  background: orange;
+
+/*Membuat tombol hapus berwarna merah*/
+.clear {
+    background: red;
 }
 
-/*Membuat efek card pada calculator*/
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 30px;
-    margin-top: 20px;
+/*Membuat tombol hapus berwarna hijau*/
+.equals {
+    background: green;
 }
 
 
-/*Mengatur Tampilan history*/
+/*Mengatur tampilan history*/
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
 }
+
+/*Mengatur table head dan table data*/
 th, td {
     text-align: center;
     padding: 16px;
 }
+
 th {
-    background-color: orange;
+    background-color: green;
     color: white;
 }
+
+/*Mengatur table row*/
 tr:nth-child(even) {
     background-color: #d2d2d2;
 }
 
-h2 {
-    text-align: center;
-}
 
 /*Membuat tampilan responsif*/
-@media screen and (max-width: 513px) {
+@media screen and (max-width: 500px) {
     .button {
         padding: 10px;
     }
