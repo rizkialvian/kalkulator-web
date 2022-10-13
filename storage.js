@@ -1,11 +1,11 @@
-//Untuk mengakses dan menyimpan data pada localStorage
+//Mengakses dan menyimpan data pada localStorage
 const CACHE_KEY = "calculation_history";
 
 function checkForStorage() {
     return typeof(Storage) !== "undefined"
 }
 
-//Untuk menyimpan data riwayat kalkulasi pada localStorage
+//Menyimpan data riwayat kalkulasi pada localStorage
 function putHistory(data) {
     if (checkForStorage()) {
         let historyData = null;
@@ -25,7 +25,7 @@ function putHistory(data) {
     }
 }
 
-//Untuk mendapatkan data dari localStorage
+//Mendapatkan data dari localStorage
 function showHistory() {
     if (checkForStorage()) {
         return JSON.parse(localStorage.getItem(CACHE_KEY)) || [];
@@ -34,7 +34,7 @@ function showHistory() {
     }
 }
 
-//Untuk merender data riwayat kalkulasi pada tabel HTML
+//Merender data riwayat kalkulasi pada tabel HTML
 function renderHistory() {
     const historyData = showHistory();
     let historyList = document.querySelector("#historyList");
