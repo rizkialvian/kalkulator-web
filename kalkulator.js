@@ -1,4 +1,4 @@
-//Tempat menyimpan data dan kondisi awal pada calculator
+//Tempat menyimpan data dan kondisi awal calculator
 const calculator = {
     displayNumber: '0',
     operator: null,
@@ -18,13 +18,13 @@ function clearCalculator() {
     calculator.firstNumber = null;
     calculator.isWaitForSecondNumber = false;
 }
- 
+
 //Digunakan untuk input data ke variabel displayNumber
 function inputDigit(digit) {
     //Membuat angka 0 berganti menjadi angka pada tombol ditekan
     if (calculator.displayNumber === '0') {
         calculator.displayNumber = digit;
-      } else {
+    } else {
         calculator.displayNumber += digit;
     }
 }
@@ -32,56 +32,64 @@ function inputDigit(digit) {
 //Membuat angka positif atau negatif
 function inverseNumber() {
     if (calculator.displayNumber === '0') {
-      return;
+        return;
     }
-    
+
     calculator.displayNumber = calculator.displayNumber * -1;
 }
 
+//Mengkondisikan kalkulator
 function handleOperator(operator) {
     if (!calculator.isWaitForSecondNumber) {
-      calculator.operator = operator;
-      calculator.isWaitForSecondNumber = true;
-      calculator.firstNumber = calculator.displayNumber;
-   
-      // mengatur ulang nilai display number supaya tombol selanjutnya dimulai dari angka pertama lagi
-      calculator.displayNumber = '0';
+        calculator.operator = operator;
+        calculator.isWaitForSecondNumber = true;
+        calculator.firstNumber = calculator.displayNumber;
+        
+        // mengatur ulang nilai display number supaya tombol selanjutnya dimulai dari angka pertama lagi
+        calculator.displayNumber = '0';
     } else {
-      alert('Operator sudah ditetapkan');
+        alert('Operator sudah ditetapkan');
     }
 }
 
+//Operasi Kalkulator
 function performCalculation() {
-  if (calculator.firstNumber == null || calculator.operator == null) {
-      alert("Anda belum menetapkan operator");
-      return;
-  }
+    if (calculator.firstNumber == null || calculator.operator == null) {
+        alert("Anda belum menetapkan operator");
+        return;
+    }
 
-  let result = 0;
-  if (calculator.operator === "+") {
-      result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
-  } else {
-      result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
-  }
+    let result = 0;
+    if (calculator.operator === '+') {
+        result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+    } else if (calculator.operator === '-') {
+        result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
+    } else if (calculator.operator === '*') {
+        result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
+    } else {
+        result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber)
+    }
 
-  // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
-  const history = {
-      firstNumber: calculator.firstNumber,
-      secondNumber: calculator.displayNumber,
-      operator: calculator.operator,
-      result: result
-  }
-  putHistory(history);
-  calculator.displayNumber = result;
-  renderHistory();
+    // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
+    const history = {
+        firstNumber: calculator.firstNumber,
+        secondNumber: calculator.displayNumber,
+        operator: calculator.operator,
+        result: result
+    }
+
+    putHistory(history);
+    calculator.displayNumber = result;
+    renderHistory();
 }
 
 //Mengambil semua elemen pada button kalkulator
 const buttons = document.querySelectorAll('.button');
-  for (const button of buttons) {
+
+for (const button of buttons) {
     button.addEventListener('click', function (event) {
-      // mendapatkan objek elemen yang diklik
-      const target = event.target;
+        // mendapatkan objek elemen yang diklik
+        const target = event.target;
 
         //Mengaktifkan tombol hapus
         if (target.classList.contains('clear')) {
@@ -110,7 +118,7 @@ const buttons = document.querySelectorAll('.button');
             return;
         }
 
-      inputDigit(target.innerText);
-      updateDisplay();
-    });
+        inputDigit(target.innerText);
+        updateDisplay();
+    })
 }
