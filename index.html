@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Kalkulator Rizki</title>
+    <title>Kalkulator Web Rizki</title>
+
+    <!--Menghubungkan Berkas CSS-->
+    <link rel="stylesheet" href="style-kalkulator.css">
 </head>
 
 <body>
-    <!--KALKULATOR-->
+    <!--BAGIAN KALKULATOR-->
     <div class="flex-container-column card">
-        <h2>Kalkulator</h2>
+        <h1>KALKULATOR</h1>
         <div class="display">
-            <h1 id="displayNumber">0</h1>
-        </div>
-        <div class="flex-container-row">
-            <div class="button">7</div>
-            <div class="button">8</div>
-            <div class="button">9</div>
-            <div class="button negative">+/-</div>
-        </div>
-        <div class="flex-container-row">
-            <div class="button">4</div>
-            <div class="button">5</div>
-            <div class="button">6</div>
-            <div class="button operator">+</div>
+            <h2 id="displayNumber">0</h2>
         </div>
         <div class="flex-container-row">
             <div class="button">1</div>
             <div class="button">2</div>
             <div class="button">3</div>
-            <div class="button operator">-</div>
+            <div class="button">4</div>
+            <div class="button">5</div>
         </div>
         <div class="flex-container-row">
-            <div class="button clear">CE</div>
+            <div class="button">6</div>
+            <div class="button">7</div>
+            <div class="button">8</div>
+            <div class="button">9</div>
             <div class="button">0</div>
-            <div class="button equals double">=</div>
+        </div>
+        <div class="flex-container-row">
+            <div class="button operator">+</div>
+            <div class="button operator">*</div>
+            <div class="button operator">-</div>
+            <div class="button operator">/</div>
+            <div class="button negative">min</div>
+        </div>
+        <div class="flex-container-row">
+            <div class="button clear double">HAPUS</div>
+            <div class="button equals double">HASIL</div>
         </div>
     </div>
 
-    <!--RIWAYAT KALKULATOR-->
+    <!--BAGIAN RIWAYAT KALKULATOR-->
     <div class="history card">
-        <h2>Riwayat Perhitungan</h2>
+        <h1>Riwayat Perhitungan</h1>
         <table>
             <thead>
                 <tr>
@@ -56,6 +60,7 @@
         </table>
     </div>
 
+    <!--Menghubungkan Berkas JavaScrip -->
     <script src="kalkulator.js"></script>
     <script src="storage.js"></script>
 </body>
